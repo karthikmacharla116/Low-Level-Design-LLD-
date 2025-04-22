@@ -36,10 +36,9 @@ public class Producer implements Runnable {
             try {
                 producerSemaphore.acquire();
 
-                //Thread.sleep(20);
+                Thread.sleep(20);
                 System.out.println("Producer :" + store.items.size());
-                System.out.println("Producer :" + Thread.currentThread().getName());
-                store.items.add(new Object());
+                store.addItem();
 
                 consumerSemaphore.release();
             } catch (InterruptedException e) {
