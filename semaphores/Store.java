@@ -10,11 +10,18 @@ public class Store {
 
     public int maxShelfs;
     public Queue<Object> items;
-    //public List<Object> items;
 
     public Store(int maxShelfs) {
         this.maxShelfs = maxShelfs;
         this.items = new ConcurrentLinkedDeque<>();
-        //this.items = new ArrayList<>();
+    }
+
+    public void addItem(){
+        items.add(new Object());
+    }
+
+    public void removeItem() {
+        //items.remove(items.size()-1);
+        items.remove();
     }
 }
