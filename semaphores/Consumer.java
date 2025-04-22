@@ -37,8 +37,7 @@ public class Consumer implements Runnable {
                 consumerSemaphore.acquire();
 
                 System.out.println("Consumer :" + store.items.size());
-                System.out.println("Consumer :" + Thread.currentThread().getName());
-                store.items.remove();
+                store.removeItem();
 
                 producerSemaphore.release();
             } catch (InterruptedException e) {
